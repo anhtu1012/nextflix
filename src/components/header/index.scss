@@ -1,0 +1,51 @@
+.header {
+  background-color: rgb(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 250px;
+
+  position: fixed; //cố định header
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10; //đưa lên trên
+  backdrop-filter: blur(1.5px); //làm mờ
+
+  &_nav {
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+
+      li {
+        color: white;
+        font-size: 20px;
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+  &_search {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 10px 240px;
+    display: flex;
+    transition: all 1s;
+    input {
+      flex-grow: 1; //lấy thằng cha trừ đi khác thằng con còn lại
+      border: none;
+      outline: none;
+      font-size: 20px;
+    }
+    &.active {
+      //đây là select vừa có header_search và active ==> đồng thời có cả 2 cái
+      top: 100%;
+    }
+  }
+}
